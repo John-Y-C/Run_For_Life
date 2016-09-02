@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.runforlife.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentlayout"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/bottom_tab_bg"
+        android:id="@+id/rg_framgentcontent_bottom"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/radiobutton_bg_home"
+            android:textColor="@drawable/radiobutton_text_color"
+            android:text="跑步"
+            android:id="@+id/rb_fragment_run"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/radiobutton_bg_news"
+            android:text="天气"
+            android:textColor="@drawable/radiobutton_text_color"
+            android:id="@+id/rb_fragment_weather"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/radiobutton_bg_service"
+            android:textColor="@drawable/radiobutton_text_color"
+            android:text="健康"
+            android:id="@+id/rb_fragment_health"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/radiobutton_bg_government"
+            android:textColor="@drawable/radiobutton_text_color"
+            android:text="日历"
+            android:id="@+id/rb_fragment_date"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/radiobutton_bg_government"
+            android:textColor="@drawable/radiobutton_text_color"
+            android:text="设置"
+            android:id="@+id/rb_fragment_setting"
+            />
+
+    </RadioGroup>
+
+</LinearLayout>
