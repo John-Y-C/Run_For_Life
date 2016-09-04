@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.administrator.runforlife.R;
+import com.viewpagerindicator.TabPageIndicator;
 
 /**
  * Created by GTR on 2016/9/3.
@@ -25,21 +26,19 @@ public class HealthTipsPage {
 
     private void initView() {
 
-
-
         tipsView = View.inflate(mActivity, R.layout.content_tips,null);
-/*
+
         TabPageIndicator indicatorHealthpageTitle = (TabPageIndicator) tipsView.findViewById(R.id.indicator_healthpage_title);
         ViewPager vpHealthpageContent = (ViewPager) tipsView.findViewById(R.id.vp_healthpage_content);
 
         vpHealthpageContent.setAdapter(new MyHealthpageAdapter());
 
-        indicatorHealthpageTitle.setViewPager(vpHealthpageContent);*/
+        indicatorHealthpageTitle.setViewPager(vpHealthpageContent);
     }
 
 
 
-   /* String[] healthpageTitles = new String[]{"title1","title2"};
+    String[] healthpageTitles = new String[]{"title1","title2"};
 
     class MyHealthpageAdapter extends PagerAdapter {
 
@@ -73,5 +72,5 @@ public class HealthTipsPage {
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
         }
-    }*/
+    }
 }

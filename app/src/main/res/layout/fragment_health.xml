@@ -19,7 +19,7 @@
             android:button="@null"
             android:text="hobit"
             android:checked="true"
-            android:textColor="@drawable/rb_text_color"
+            android:textColor="@drawable/healthpage_text_color"
             android:padding="10dp"
             android:textSize="30sp"/>
 
@@ -29,7 +29,7 @@
             android:id="@+id/btnHealthTips"
             android:button="@null"
             android:text="tips"
-            android:textColor="@drawable/rb_text_color"
+            android:textColor="@drawable/healthpage_text_color"
             android:padding="10dp"
             android:textSize="30sp"/>
 

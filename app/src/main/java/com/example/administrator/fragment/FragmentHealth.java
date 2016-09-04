@@ -32,9 +32,12 @@ public class FragmentHealth extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //更换fragment的theme
+        getActivity().getTheme().applyStyle(com.viewpagerindicator.R.style.Theme_PageIndicatorDefaults, true);
+
         View inflate = View.inflate(getActivity(), R.layout.fragment_health, null);
 
-        RadioGroup rgHealthChoice = (RadioGroup) inflate.findViewById(R.id.rg_health_choice);
+        final RadioGroup rgHealthChoice = (RadioGroup) inflate.findViewById(R.id.rg_health_choice);
         vpHealthContent = (ViewPager) inflate.findViewById(R.id.vp_health_content);
 
         healthPages = new ArrayList<>();
@@ -47,6 +50,8 @@ public class FragmentHealth extends Fragment {
 
         //进入时默认选中第一个按钮
         rgHealthChoice.check(R.id.btnHealthHobit);
+
+
 
         rgHealthChoice.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
