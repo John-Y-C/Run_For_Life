@@ -57,4 +57,11 @@
         android:layout_height="match_parent"
         android:id="@+id/vp_health_content"></com.example.administrator.view.NoScrollViewPage>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_test">
+
+    </ListView>
+
 </LinearLayout>

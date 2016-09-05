@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.runforlife.MainActivity">
+    tools:context="com.example.administrator.runforlife.MainActivity"
+    android:background="#293134">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -75,7 +76,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:drawableTop="@drawable/radiobutton_bg_government"
+            android:drawableTop="@drawable/radiobutton_bg_setting"
             android:textColor="@drawable/radiobutton_text_color"
             android:text="设置"
             android:id="@+id/rb_fragment_setting"
