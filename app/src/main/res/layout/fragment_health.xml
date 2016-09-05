@@ -4,40 +4,57 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <RadioGroup
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:background="@drawable/base_titlebar_bg"
-        android:id="@+id/rg_health_choice">
+        android:layout_height="wrap_content">
 
-        <RadioButton
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnHealthHobit"
-            android:button="@null"
-            android:text="hobit"
-            android:checked="true"
-            android:textColor="@drawable/healthpage_text_color"
-            android:padding="10dp"
-            android:textSize="30sp"/>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/base_titlebar_bg"
+            android:id="@+id/rg_health_choice">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnHealthTips"
-            android:button="@null"
-            android:text="tips"
-            android:textColor="@drawable/healthpage_text_color"
-            android:padding="10dp"
-            android:textSize="30sp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_health_plan"
+                android:button="@null"
+                android:text="良好习惯"
+                android:checked="true"
+                android:textColor="@drawable/healthtitle_text_color"
+                android:padding="10dp"
+                android:textSize="20sp"/>
 
-    </RadioGroup>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_health_info"
+                android:button="@null"
+                android:text="健康资讯"
+                android:textColor="@drawable/healthtitle_text_color"
+                android:padding="10dp"
+                android:textSize="20sp"/>
 
-    <android.support.v4.view.ViewPager
+        </RadioGroup>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/icon_menu_day_switch"
+            android:id="@+id/ib_health_mode"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+
+    <com.example.administrator.view.NoScrollViewPage
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/vp_health_content"></android.support.v4.view.ViewPager>
+        android:id="@+id/vp_health_content"></com.example.administrator.view.NoScrollViewPage>
 
 </LinearLayout>

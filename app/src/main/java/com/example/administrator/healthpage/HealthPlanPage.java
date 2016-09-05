@@ -5,21 +5,20 @@ import android.view.View;
 
 import com.example.administrator.runforlife.R;
 
-/**
- * Created by GTR on 2016/9/3.
- */
-public class HealthHabitPage {
+
+public class HealthPlanPage {
 
     protected Activity mActivity;
     public View habitView;
 
-    public HealthHabitPage(Activity activity){
+    public HealthPlanPage(Activity activity) {
         this.mActivity = activity;
         initView();
     }
 
     private void initView() {
-        habitView = View.inflate(mActivity, R.layout.content_habit,null);
+        habitView = View.inflate(mActivity, R.layout.content_health_plan, null);
+
     }
 
 
