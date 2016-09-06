@@ -3,7 +3,7 @@ package com.example.administrator.bean;
 import java.util.List;
 
 
-public class InfoDetail {
+public class HealthInfoList {
 
     /**
      * total : 13

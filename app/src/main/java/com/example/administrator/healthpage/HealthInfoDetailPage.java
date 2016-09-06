@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.activity.ShowInfoDetailHealthActivity;
-import com.example.administrator.bean.InfoDetail;
+import com.example.administrator.bean.HealthInfoList;
 import com.example.administrator.constants.Const;
 import com.example.administrator.runforlife.R;
 import com.google.gson.Gson;
@@ -21,9 +21,6 @@ import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
-
-import org.apache.http.HttpException;
-import org.apache.http.HttpRequest;
 
 import java.util.List;
 
@@ -34,7 +31,7 @@ public class HealthInfoDetailPage {
     Activity mActivity;
     public View infoDetailView;
     private ListView lvHealthdetailInfo;
-    private List<InfoDetail.ResultBean> resultList;
+    private List<HealthInfoList.ResultBean> resultList;
 
     public HealthInfoDetailPage(Activity activity, int infoId) {
 
@@ -90,7 +87,7 @@ public class HealthInfoDetailPage {
 
         //用Gson解析
         Gson gson = new Gson();
-        InfoDetail infoDetail = gson.fromJson(result, InfoDetail.class);
+        HealthInfoList infoDetail = gson.fromJson(result, HealthInfoList.class);
 
         resultList = infoDetail.getResult();
         lvHealthdetailInfo.setAdapter(new MyInfoListAdapter());

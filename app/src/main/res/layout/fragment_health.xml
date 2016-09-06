@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_health_plan"
                 android:button="@null"
-                android:text="良好习惯"
+                android:text="训练计划"
                 android:checked="true"
                 android:textColor="@drawable/healthtitle_text_color"
                 android:padding="10dp"
@@ -56,12 +56,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/vp_health_content"></com.example.administrator.view.NoScrollViewPage>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lv_test">
-
-    </ListView>
 
 </LinearLayout>

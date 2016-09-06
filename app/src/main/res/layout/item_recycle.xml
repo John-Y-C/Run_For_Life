@@ -10,6 +10,6 @@
         android:id="@+id/iv_itemrecycle"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
-        android:src="@drawable/a2"/>
+        android:src="@drawable/a27"/>
 
 </LinearLayout>
