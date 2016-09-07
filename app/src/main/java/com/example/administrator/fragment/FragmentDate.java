@@ -20,7 +20,7 @@ public class FragmentDate extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View inflate = View.inflate(getActivity(), R.layout.fragment_health, null);
+        View inflate = View.inflate(getActivity(), R.layout.fragment_date, null);
         TextView tv_fragment = (TextView) inflate.findViewById(R.id.testView);
         tv_fragment.setText("Date");
         tv_fragment.setTextColor(Color.RED);

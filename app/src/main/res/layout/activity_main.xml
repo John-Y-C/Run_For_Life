@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.runforlife.MainActivity"
-    android:background="#293134">
+    android:background="@drawable/base_bg">
 
     <FrameLayout
         android:layout_width="match_parent"

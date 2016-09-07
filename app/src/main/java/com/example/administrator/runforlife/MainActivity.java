@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @InjectView(R.id.rg_framgentcontent_bottom)
     RadioGroup rgFramgentcontentBottom;
     private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,29 +45,35 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.inject(this);
         getSupportActionBar().hide();
         fragmentManager = getFragmentManager();
+
+        fragmentTransaction = fragmentManager.beginTransaction();
+
+        //设置默认显示页面
+        fragmentTransaction.replace(R.id.fragmentlayout,new FragmentRun());
+        fragmentTransaction.commit();
     }
 
     @OnClick({R.id.rb_fragment_run, R.id.rb_fragment_weather, R.id.rb_fragment_health, R.id.rb_fragment_date, R.id.rb_fragment_setting})
     public void onClick(View view) {
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction = fragmentManager.beginTransaction();
         switch (view.getId()) {
-            case R.id.rb_fragment_run:
+            case R.id.rb_fragment_run://跑步页面
                 fragmentTransaction.replace(R.id.fragmentlayout,new FragmentRun());
                 fragmentTransaction.commit();
                 break;
-            case R.id.rb_fragment_weather:
+            case R.id.rb_fragment_weather://天气页面
                 fragmentTransaction.replace(R.id.fragmentlayout,new FragmentWeather());
                 fragmentTransaction.commit();
                 break;
-            case R.id.rb_fragment_health:
+            case R.id.rb_fragment_health://健康页面
                 fragmentTransaction.replace(R.id.fragmentlayout,new FragmentHealth());
                 fragmentTransaction.commit();
                 break;
-            case R.id.rb_fragment_date:
+            case R.id.rb_fragment_date://打卡页面
                 fragmentTransaction.replace(R.id.fragmentlayout,new FragmentDate());
                 fragmentTransaction.commit();
                 break;
-            case R.id.rb_fragment_setting:
+            case R.id.rb_fragment_setting://设置页面
                 fragmentTransaction.replace(R.id.fragmentlayout,new FragmentSetting());
                 fragmentTransaction.commit();
                 break;
