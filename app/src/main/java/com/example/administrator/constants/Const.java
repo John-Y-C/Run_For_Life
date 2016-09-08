@@ -9,4 +9,9 @@ public class Const {
     public static String healthListAddr = "http://api.avatardata.cn/Lore/Search";
     //详情网址
     public static String healthDetailAddr = "http://api.avatardata.cn/Lore/Show";
+
+    //和风天气api
+    public static  final  String WEATHER_API = "https://api.heweather.com/x3/weather?" +
+            "cityid=CN101280601&key=0607bb51483845159b48b1b010509e4c";
+
 }
