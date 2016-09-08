@@ -39,15 +39,6 @@
 
         </RadioGroup>
 
-        <ImageButton
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/icon_menu_day_switch"
-            android:id="@+id/ib_health_mode"
-            android:visibility="gone"/>
-
 
     </RelativeLayout>
 

@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="com.example.administrator.activity.ShowInfoDetailHealthActivity">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +21,6 @@
             android:onClick="back"/>
 
     </RelativeLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,6 +39,5 @@
             android:layout_centerInParent="true"
             android:id="@+id/pb_showinfodetail_loading"/>
     </RelativeLayout>
-
 
 </LinearLayout>

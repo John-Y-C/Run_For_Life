@@ -9,7 +9,7 @@ import com.example.administrator.runforlife.R;
 public class HealthPlanPage {
 
     protected Activity mActivity;
-    public View habitView;
+    public View planView;
 
     public HealthPlanPage(Activity activity) {
         this.mActivity = activity;
@@ -17,7 +17,7 @@ public class HealthPlanPage {
     }
 
     private void initView() {
-        habitView = View.inflate(mActivity, R.layout.content_health_plan, null);
+        planView = View.inflate(mActivity, R.layout.content_health_plan, null);
 
     }
 

@@ -29,6 +29,6 @@ public class NoScrollViewPage extends ViewPager {
     //禁用viewpager的左右滑动
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        return false;       //super.onTouchEvent(ev);
+        return false;
     }
 }

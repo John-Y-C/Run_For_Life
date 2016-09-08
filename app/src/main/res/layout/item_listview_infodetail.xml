@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="100dp"
-    android:padding="5dp">
+    android:padding="8dp">
 
     <ImageView
         android:layout_width="120dp"
@@ -15,7 +15,8 @@
         android:id="@+id/tv_infodetail_title"
         android:textColor="#fff"
         android:textSize="18sp"
-        android:paddingLeft="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
         android:singleLine="true"/>
 
     <TextView
@@ -23,11 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/iv_infodetail_img"
         android:layout_below="@id/tv_infodetail_title"
-        android:paddingTop="5dp"
-        android:paddingLeft="5dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
         android:textColor="#ccc"
         android:id="@+id/tv_infodetail_keywords"/>
-
-
 
 </RelativeLayout>

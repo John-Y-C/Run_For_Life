@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.administrator.bean.HealthInfoDetail;
 import com.example.administrator.runforlife.R;
+import com.example.administrator.utils.SharedPrefUtils;
 import com.google.gson.Gson;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -50,19 +51,35 @@ public class ShowInfoDetailHealthActivity extends AppCompatActivity {
 
         String url = intent.getStringExtra("url");
 
+        String jsonFromCache = SharedPrefUtils.getJsonFromCache(url,this);
 
-        getDataFromServer(url);
+        if (jsonFromCache.isEmpty()){
+            //从服务器上去拿数据
+            Log.i(TAG,"缓存为空,从服务器上去拿数据");
+            getDataFromServer(url);
+        }else {
+            //缓存不为空，则直接用缓存去解析json
+            Log.i(TAG,"缓存不为空,直接用缓存去解析json");
+            parseJsonString(jsonFromCache);
+        }
 
     }
 
+    //从服务器上去拿数据
     private void getDataFromServer(String url) {
 
+        final String urlkey = url;
+
+        Log.i(TAG, "getDataFromServer="+url);
         HttpUtils httpUtils = new HttpUtils();
-        httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+        httpUtils.send(HttpRequest.HttpMethod.GET, urlkey, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
 
+                Log.i(TAG,"url:"+urlkey);
                 Log.i(TAG, "onSuccess--"+responseInfo.result);
+                //把从服务器上拿到的JsonString缓存起来
+                SharedPrefUtils.saveJsonToCache(urlkey,responseInfo.result,ShowInfoDetailHealthActivity.this);
                 parseJsonString(responseInfo.result);
             }
 
@@ -81,7 +98,11 @@ public class ShowInfoDetailHealthActivity extends AppCompatActivity {
         HealthInfoDetail healthInfoDetail = gson.fromJson(result, HealthInfoDetail.class);
 
 /*        //获取屏幕宽度
-        int width = this.getWindowManager().getDefaultDisplay().getWidth();*/
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int widthPixels = displayMetrics.widthPixels;
+        String widthF = "<head><style>img{max-width:"+widthPixels+"px !important;}</style></head>";*/
+
 
         //打开页面时， 自适应屏幕：
         WebSettings ws = wvShowinfodetailContent.getSettings();
