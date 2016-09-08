@@ -6,6 +6,8 @@
     <com.example.administrator.view.RefreshListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="#444"
+        android:dividerHeight="1px"
         android:id="@+id/lv_healthdetail_info"></com.example.administrator.view.RefreshListView>
 
 </LinearLayout>

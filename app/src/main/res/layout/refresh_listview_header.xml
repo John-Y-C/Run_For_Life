@@ -5,12 +5,12 @@
     android:gravity="center">
 
     <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:indeterminateDrawable="@drawable/drawable_progress"
         android:indeterminateOnly="true"
         android:indeterminateBehavior="repeat"
-        android:layout_margin="10dp"
+        android:layout_margin="12dp"
         android:id="@+id/pb_refreshlistviewheader_freshing"/>
 
 </LinearLayout>
