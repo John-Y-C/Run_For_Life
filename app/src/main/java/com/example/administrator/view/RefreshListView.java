@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -12,12 +13,13 @@ import android.widget.TextView;
 import com.example.administrator.runforlife.R;
 
 
-public class RefreshListView extends ListView {
+public class RefreshListView extends ListView implements AbsListView.OnScrollListener {
     private static final String TAG = "RefreshListView";
     private int measuredHeight;
     private View refreshListviewHeader;
     private ProgressBar pbRefreshlistviewheaderFreshing;
     private TextView tvRefreshfooterGetmoredata;
+    private boolean isRefreshable;
 
     public RefreshListView(Context context) {
         super(context);
@@ -42,7 +44,12 @@ public class RefreshListView extends ListView {
         refreshListviewHeader.measure(0,0);
         measuredHeight = refreshListviewHeader.getMeasuredHeight();
         refreshListviewHeader.setPadding(0,-measuredHeight,0,0);
+
+        // 将下拉刷新的布局加入ListView的顶部
         addHeaderView(refreshListviewHeader);
+
+        // 设置滚动监听事件
+        setOnScrollListener(this);
 
     }
 
@@ -68,6 +75,23 @@ public class RefreshListView extends ListView {
         });
     }
 
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+        Log.i(TAG,"firstVisibleItem:"+firstVisibleItem);
+        //只有当listview滑到最上面时才能刷新
+        if (firstVisibleItem==0){
+            isRefreshable = true;
+        }else {
+            isRefreshable = false;
+        }
+    }
+
     float startX;
     float startY;
     float endX;
@@ -82,64 +106,66 @@ public class RefreshListView extends ListView {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
 
-        switch (ev.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                startX=ev.getRawX();
-                startY=ev.getRawY();
-                Log.i(TAG,"startX="+startX+" startY="+startY);
-                break;
+        if (isRefreshable){
 
-            case MotionEvent.ACTION_MOVE:
-                if (current_state == REFRESHING){
+            switch (ev.getAction()){
+                case MotionEvent.ACTION_DOWN:
+                    startX=ev.getRawX();
+                    startY=ev.getRawY();
+                    Log.i(TAG,"startX="+startX+" startY="+startY);
                     break;
-                }
 
-                if (startX==0) startX= ev.getRawX();
-                if (startY==0) startY= ev.getRawY();
+                case MotionEvent.ACTION_MOVE:
+                    if (current_state == REFRESHING){
+                        break;
+                    }
 
-                Log.i(TAG,"startX="+startX+" startY="+startY);
-                endX= ev.getRawX();
-                endY =ev.getRawY();
-                Log.i(TAG,"endX="+endX+" endY="+endY);
-                float dx =Math.abs(startX-endX);
-                float dy =Math.abs(startY-endY);
-                Log.i(TAG,"dx="+dx+" dy="+dy);
+                    if (startX==0) startX= ev.getRawX();
+                    if (startY==0) startY= ev.getRawY();
 
-                if (dx<dy){
-                    if (endY>startY){//下滑
-                        Log.i(TAG,"下滑");
-                        refreshListviewHeader.setPadding(0,-measuredHeight+(int)(dy),0,0);
-                        if (-measuredHeight+(int)(dy)>0&&current_state!=NEED_RELEASE){
-                            //就已经完全拉出来了。
-                            current_state=NEED_RELEASE;
-                            Log.i(TAG,"状态变为需要松手");
+                    Log.i(TAG,"startX="+startX+" startY="+startY);
+                    endX= ev.getRawX();
+                    endY =ev.getRawY();
+                    Log.i(TAG,"endX="+endX+" endY="+endY);
+                    float dx =Math.abs(startX-endX);
+                    float dy =Math.abs(startY-endY);
+                    Log.i(TAG,"dx="+dx+" dy="+dy);
+
+                    if (dx<dy){
+                        if (endY>startY){//下滑
+                            Log.i(TAG,"下滑");
+                            refreshListviewHeader.setPadding(0,-measuredHeight+(int)(dy),0,0);
+                            if (-measuredHeight+(int)(dy)>0&&current_state!=NEED_RELEASE){
+                                //就已经完全拉出来了。
+                                current_state=NEED_RELEASE;
+                                Log.i(TAG,"状态变为需要松手");
+                            }
                         }
                     }
-                }
-                break;
+                    break;
 
-            case  MotionEvent.ACTION_UP:
+                case  MotionEvent.ACTION_UP:
 
-                //如果已经完全拉出来了，就刷新
-                if (current_state==NEED_RELEASE){
-                    current_state=REFRESHING;
-                    Log.i(TAG,"状态变为正在刷新");
-                    refreshListviewHeader.setPadding(0,0,0,0);
+                    //如果已经完全拉出来了，就刷新
+                    if (current_state==NEED_RELEASE){
+                        current_state=REFRESHING;
+                        Log.i(TAG,"状态变为正在刷新");
+                        refreshListviewHeader.setPadding(0,0,0,0);
 
-                    //刷新的代码
-                    if (listener!=null){
-                        listener.onRefreshing();
+                        //刷新的代码
+                        if (listener!=null){
+                            listener.onRefreshing();
+                        }
                     }
-                }
 
-                //如果只拉出来一点点，就让他弹回去，恢复到原位（隐藏）
-                if (current_state==INITSTATE){
-                    Log.i(TAG,"状态变为初始状态，回到原位");
-                    refreshListviewHeader.setPadding(0,-measuredHeight ,0,0);
-                }
-                break;
+                    //如果只拉出来一点点，就让他弹回去，恢复到原位（隐藏）
+                    if (current_state==INITSTATE){
+                        Log.i(TAG,"状态变为初始状态，回到原位");
+                        refreshListviewHeader.setPadding(0,-measuredHeight ,0,0);
+                    }
+                    break;
+            }
         }
-
         return super.onTouchEvent(ev);
     }
 

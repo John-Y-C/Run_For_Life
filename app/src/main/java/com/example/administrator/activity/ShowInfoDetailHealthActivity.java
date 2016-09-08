@@ -104,14 +104,6 @@ public class ShowInfoDetailHealthActivity extends AppCompatActivity {
         String widthF = "<head><style>img{max-width:"+widthPixels+"px !important;}</style></head>";*/
 
 
-        //打开页面时， 自适应屏幕：
-        WebSettings ws = wvShowinfodetailContent.getSettings();
-        ws.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-        ws.setUseWideViewPort(false);
-        ws.setLoadWithOverviewMode(true);    // 缩放至屏幕的大小
-        ws.setSupportZoom(true);      //支持缩放
-
-
         //获取标题
         String title = healthInfoDetail.getResult().getTitle();
         String titleF ="<h1>"+title+"</h1> ";
@@ -124,7 +116,7 @@ public class ShowInfoDetailHealthActivity extends AppCompatActivity {
 
         //获取图片
         String img = healthInfoDetail.getResult().getImg();
-        String imgF = "<p align='center'><img src='"+img+"' /></p>";
+        String imgF = "<p align='center'><img src='"+img+"' width='90%' /></p>";
 
         //获取正文
         String message = healthInfoDetail.getResult().getMessage();
@@ -132,6 +124,16 @@ public class ShowInfoDetailHealthActivity extends AppCompatActivity {
         //组合成网页内容
         String content = titleF+dateF+imgF+message;
         wvShowinfodetailContent.loadDataWithBaseURL(null,content,"text/html","utf-8",null);
+
+        //打开页面时， 自适应屏幕：
+        WebSettings ws = wvShowinfodetailContent.getSettings();
+        ws.setBlockNetworkImage(false);         //true:阻止网络图片数据；false:解除网络图片数据
+        ws.setDefaultTextEncodingName("UTF-8");
+        ws.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        ws.setUseWideViewPort(false);
+        ws.setLoadWithOverviewMode(true);    // 缩放至屏幕的大小
+        ws.setCacheMode(WebSettings.LOAD_DEFAULT);
+        ws.setSupportZoom(true);      //支持缩放
 
 
         wvShowinfodetailContent.setWebViewClient(new WebViewClient(){

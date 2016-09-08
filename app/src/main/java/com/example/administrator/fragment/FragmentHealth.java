@@ -4,16 +4,14 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.RadioGroup;
 
 import com.example.administrator.healthpage.HealthInfoPage;
-import com.example.administrator.healthpage.HealthPlanPage;
+import com.example.administrator.healthpage.HealthTrainPage;
 import com.example.administrator.runforlife.R;
 import com.example.administrator.view.NoScrollViewPage;
 
@@ -40,7 +38,7 @@ public class FragmentHealth extends Fragment {
 
         healthPages = new ArrayList<>();
 
-        healthPages.add(new HealthPlanPage(getActivity()));
+        healthPages.add(new HealthTrainPage(getActivity()));
         healthPages.add(new HealthInfoPage(getActivity()));
 
         vpHealthContent.setAdapter(new MyContentAdapter());
@@ -85,9 +83,9 @@ public class FragmentHealth extends Fragment {
 
             Log.i(TAG, "instantiateItem,position:" + position);
             if (position == 0) {
-                HealthPlanPage page = (HealthPlanPage) healthPages.get(position);
-                container.addView(page.planView);
-                return page.planView;
+                HealthTrainPage page = (HealthTrainPage) healthPages.get(position);
+                container.addView(page.trainView);
+                return page.trainView;
             } else {
                 HealthInfoPage page = (HealthInfoPage) healthPages.get(position);
                 container.addView(page.infoView);
