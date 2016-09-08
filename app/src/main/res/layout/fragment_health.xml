@@ -39,6 +39,14 @@
 
         </RadioGroup>
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/im_fragment_health_share"
+            android:background="@drawable/share"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
 
     </RelativeLayout>
 
