@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -165,7 +164,6 @@ public class HealthInfoDetailPage {
 
             @Override
             public void onFailure(HttpException e, String s) {
-
                 lvHealthdetailInfo.onRefreshComplete();   //刷新完毕，回到初始状态
                 Log.i(TAG, "onFailure--" + s);
                 Toast.makeText(mActivity, "加载失败，请稍后再试！", Toast.LENGTH_SHORT).show();
