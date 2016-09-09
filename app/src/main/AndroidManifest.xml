@@ -3,8 +3,6 @@
           package="com.example.administrator.runforlife">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -34,6 +32,7 @@
         <activity android:name=".RunActivity">
         </activity>
         <activity android:name="com.example.administrator.activity.ShowInfoDetailHealthActivity"></activity>
+        <activity android:name="com.example.administrator.activity.TrainplanContentActivity"></activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
