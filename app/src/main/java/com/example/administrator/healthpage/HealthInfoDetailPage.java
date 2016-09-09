@@ -178,9 +178,15 @@ public class HealthInfoDetailPage {
         Gson gson = new Gson();
         HealthInfoList infoDetail = gson.fromJson(result, HealthInfoList.class);
 
-        resultList = infoDetail.getResult();
-        myInfoListAdapter = new MyInfoListAdapter();
-        lvHealthdetailInfo.setAdapter(myInfoListAdapter);
+        Log.i(TAG,"infoDetail.getResult():"+infoDetail.getResult());
+
+        if (infoDetail.getResult()!=null){
+            resultList = infoDetail.getResult();
+            myInfoListAdapter = new MyInfoListAdapter();
+            lvHealthdetailInfo.setAdapter(myInfoListAdapter);
+        }else {
+            Toast.makeText(mActivity,"无法连接服器，请稍后再试！",Toast.LENGTH_SHORT).show();
+        }
 
     }
 
