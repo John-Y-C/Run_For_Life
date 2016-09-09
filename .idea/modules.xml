@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RunForLife.iml" filepath="$PROJECT_DIR$/RunForLife.iml" />
       <module fileurl="file://$PROJECT_DIR$/Run_For_Life.iml" filepath="$PROJECT_DIR$/Run_For_Life.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/indicatorlibrary/indicatorlibrary.iml" filepath="$PROJECT_DIR$/indicatorlibrary/indicatorlibrary.iml" />
