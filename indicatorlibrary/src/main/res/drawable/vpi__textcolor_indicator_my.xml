@@ -18,4 +18,3 @@
     <item android:state_focused="true" android:state_selected="false" android:state_pressed="true" android:color="#9A9A9A" />
     <item android:state_focused="true" android:state_selected="true"  android:state_pressed="true" android:color="#fff" />
 </selector>
-</selector>
