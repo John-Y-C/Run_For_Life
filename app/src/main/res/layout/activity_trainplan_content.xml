@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.administrator.activity.TrainplanContentActivity">
 
-    <WebView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/wv_showtrainplan_content"></WebView>
+        android:layout_height="wrap_content"
+        android:background="@drawable/base_titlebar_bg"
+        android:padding="5dp">
 
-</RelativeLayout>
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/topbar_icon_back"
+            android:id="@+id/ib_healthtrain_back"
+            android:onClick="back"/>
+
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/im_healthtrain_share"
+            android:background="@drawable/share"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/wv_showtrainplan_content"></WebView>
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:indeterminateDrawable="@drawable/drawable_progress"
+            android:indeterminateOnly="true"
+            android:indeterminateBehavior="repeat"
+            android:layout_centerInParent="true"
+            android:id="@+id/pb_trainplancontent_loading"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
