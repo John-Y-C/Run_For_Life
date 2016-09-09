@@ -7,12 +7,39 @@ import android.net.Uri;
  * Created by Administrator on 2016/9/5/005.
  */
 public class PhotoWall {
-    private int img;
-    private Uri uri;
-    private Bitmap bitmap;
+    public int img;
+    public Uri uri;
+    public Bitmap bitmap;
+    public String picUri;
+    public String picPath;
+
+    public PhotoWall(String picPath) {
+        this.picPath = picPath;
+    }
+
+    public String getPicPath() {
+        return picPath;
+    }
+
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
+    }
+
+    public PhotoWall() {
+
+    }
+
+    public String getPicUri() {
+        return picUri;
+    }
+
+    public void setPicUri(String picUri) {
+        this.picUri = picUri;
+    }
 
     public PhotoWall(Bitmap bitmap) {
         this.bitmap = bitmap;
+
     }
 
     public Bitmap getBitmap() {

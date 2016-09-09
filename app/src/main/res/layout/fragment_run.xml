@@ -18,15 +18,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ib_fragment_run"
-        android:src="@drawable/setting"
+        android:background="@drawable/sport80"
         android:layout_centerInParent="true"
         android:visibility="visible"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/setting_fill"
-        android:id="@+id/iv_fragment_column"
+        android:src="@mipmap/lv_icon"
+        android:id="@+id/iv_fragment_list"
         android:layout_alignParentBottom="true"/>
+
+ <!--   <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/setting_fill"
+        android:id="@+id/iv_fragment_grid"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>-->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/pb_icon"
+        android:id="@+id/iv_fragment_stag"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
