@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.runforlife.GuideActivity">
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/vp_guideactivity_guidepage">
+    </android.support.v4.view.ViewPager>
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50px"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/fl_guideactivity_indicator"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ll_guideactivity_indicator">
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/redpoint"
+            android:id="@+id/rp_guideactivity"/>
+    </FrameLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入首页"
+        android:visibility="invisible"
+        android:layout_above="@id/fl_guideactivity_indicator"
+        android:id="@+id/bt_guideactivity_enter"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bt_enter_bg"
+        android:layout_marginBottom="20dp"
+        android:onClick="enterHome"/>
+
+</RelativeLayout>
