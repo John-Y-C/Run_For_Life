@@ -1,9 +1,33 @@
 [
     {
-        "merged": "E:\\Android\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__light_theme.xml",
-        "source": "E:\\Android\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__light_theme.xml"
+        "merged": "H:\\AndoirdWorkPlace\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__light_theme.xml",
+        "source": "H:\\AndoirdWorkPlace\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__light_theme.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__light_theme.xml",
+        "source": "D:\\AndroidStudioProjects\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__light_theme.xml"
+    },
+    {
+        "merged": "H:\\AndoirdWorkPlace\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__dark_theme.xml",
+        "source": "H:\\AndoirdWorkPlace\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__dark_theme.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__dark_theme.xml",
+        "source": "D:\\AndroidStudioProjects\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__dark_theme.xml"
+        "merged": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__light_theme.xml",
+        "source": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__light_theme.xml"
+    },
+    {
+        "merged": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__dark_theme.xml",
+        "source": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__dark_theme.xml"
+    },
+    {
+        "merged": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__light_theme.xml",
+        "source": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__light_theme.xml"
+    },
+    {
+        "merged": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__dark_theme.xml",
+        "source": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__dark_theme.xml"
         "merged": "E:\\Android\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__dark_theme.xml",
         "source": "E:\\Android\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__dark_theme.xml"
     }
