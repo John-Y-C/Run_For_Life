@@ -1,7 +1,23 @@
 [
     {
+        "merged": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\vpi__textcolor_indicator_my.xml",
+        "source": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi__textcolor_indicator_my.xml"
+    },
+    {
         "merged": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\news_tab_item_bg_select.9.png",
         "source": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\news_tab_item_bg_select.9.png"
+    },
+    {
+        "merged": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\vpi__tab_indicator.xml",
+        "source": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi__tab_indicator.xml"
+    },
+    {
+        "merged": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\vpi__tab_indicator_my.xml",
+        "source": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi__tab_indicator_my.xml"
+    },
+    {
+        "merged": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\news_tab_item_bg_select.9.png",
+        "source": "D:\\android github\\Run_For_Life\\indicatorlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\news_tab_item_bg_select.9.png"
     },
     {
         "merged": "F:\\MyAndroidStudioWP\\RunForLife\\indicatorlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\vpi__tab_indicator.xml",
