@@ -14,7 +14,6 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -53,8 +52,8 @@ public class FragmentRun extends Fragment {
     ImageButton ibFragmentRun;
     @InjectView(R.id.iv_fragment_list)
     ImageView ivFragmentColumn;
-    @InjectView(R.id.iv_fragment_grid)
-    ImageView ivFragmentGrid;
+    /*    @InjectView(R.id.iv_fragment_grid)
+        ImageView ivFragmentGrid;*/
     @InjectView(R.id.iv_fragment_stag)
     ImageView ivFragmentStag;
 
@@ -63,7 +62,6 @@ public class FragmentRun extends Fragment {
     private Uri uri;
     private Bitmap bitmap;
     private int clickPosition;
-    private int column = 2;
     private SharedPreferences sdphotoWall;
     private PhotoWallDao photoWallDao;
     private PhotoWall photoWall;
@@ -85,7 +83,7 @@ public class FragmentRun extends Fragment {
         photoWallList = new ArrayList<>();
 
         //设置layoutManager，将布局设置为瀑布流
-        lrFragmentrunImg.setLayoutManager(new StaggeredGridLayoutManager(column, StaggeredGridLayoutManager.VERTICAL));
+        lrFragmentrunImg.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
 
         initData();
 
@@ -164,7 +162,7 @@ public class FragmentRun extends Fragment {
         });
     }
 
-    @OnClick({R.id.iv_fragment_initimg, R.id.ib_fragment_run, R.id.iv_fragment_list, R.id.iv_fragment_grid, R.id.iv_fragment_stag})
+    @OnClick({R.id.iv_fragment_initimg, R.id.ib_fragment_run, R.id.iv_fragment_list, R.id.iv_fragment_stag})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_fragment_initimg://进入图库选图
@@ -179,21 +177,21 @@ public class FragmentRun extends Fragment {
             case R.id.iv_fragment_list://切换成listview布局
                 lrFragmentrunImg.setLayoutManager(new LinearLayoutManager(getActivity()));
                 break;
-            case R.id.iv_fragment_grid://切换成gridview布局
+          /*  case R.id.iv_fragment_grid://切换成gridview布局
                 lrFragmentrunImg.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-                break;
+                break;*/
             case R.id.iv_fragment_stag://切换成StaggeredGrid布局
-                lrFragmentrunImg.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+                lrFragmentrunImg.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
                 break;
         }
     }
 
     public class MyRLAdapter extends RecyclerView.Adapter<MyRecycleView> {
 
-        //private List<PhotoWall> photoWalls;
+        private List<PhotoWall> photoWalls;
 
         public MyRLAdapter(List<PhotoWall> photoWalls) {
-            photoWallList= photoWalls;
+            this.photoWalls = photoWalls;
             Log.d("MyRLAdapter", "photoWalls:" + photoWalls);
         }
 
@@ -208,11 +206,16 @@ public class FragmentRun extends Fragment {
         public void onBindViewHolder(final MyRecycleView holder, int position) {
             //holder.imageView.setImageResource(photoWalls.get(position).getImg());
 
-            PhotoWall photoWallonAdapter = photoWallList.get(position);
-            Log.d("FragmentRun", "initData：" + photoWallonAdapter.picPath);
+            PhotoWall photoWallonAdapter = photoWalls.get(position);
             BitmapFactory.Options options = new BitmapFactory.Options();
+            //增加负担，运行迟缓，不可在此操作
             zoomPic(photoWallonAdapter.picPath, options);
             bitmap = BitmapFactory.decodeFile(photoWallonAdapter.picPath, options);
+
+            if (bitmap == null) {
+                zoomPic(photoWall.picPath, options);
+                bitmap = BitmapFactory.decodeFile(photoWall.picPath, options);
+            }
 
             //new AsyncTask<PhotoWall,>()
 
@@ -246,8 +249,8 @@ public class FragmentRun extends Fragment {
 
         @Override
         public int getItemCount() {
-            Log.d("MyRLAdapter", "photoWalls.size():" + photoWallList.size());
-            return photoWallList.size();
+            Log.d("MyRLAdapter", "photoWalls.size():" + photoWalls.size());
+            return this.photoWalls.size();
         }
 
         /*
@@ -256,11 +259,12 @@ public class FragmentRun extends Fragment {
         public void addData(int position) {
             PhotoWall addphotoWall = new PhotoWall(bitmap);
             Log.d("MyRLAdapter", "addData:" + photoWall);
-            photoWallList.add(position, addphotoWall);
+            photoWalls.add(position, addphotoWall);
+            Log.d("MyRLAdapter", "addData position:" + position);
             //将新加入的图片对象转换为String存入数据库
 
             //-----------------------二进制------------------------
-            Log.d("MyRLAdapter", photoWall.picPath);
+            Log.d("MyRLAdapter", "photoWall.picPath: " + photoWall.picPath);
             photoWallDao.insertNum(photoWall.picPath);
 
             notifyItemInserted(position);
@@ -271,7 +275,7 @@ public class FragmentRun extends Fragment {
         */
         public void removeData(int position) {
             //photoWallList.remove(position);
-            photoWallList.remove(deletePhotoWall);
+            photoWalls.remove(deletePhotoWall);
             //删除数据库中对应的数据
             photoWallDao.deleteNum(deletePhotoWall.picPath);
 
@@ -289,8 +293,8 @@ public class FragmentRun extends Fragment {
         if (photoWallList.size() == 0) {
             ivFragmentInitimg.setVisibility(View.VISIBLE);
         } else {
-            Toast.makeText(getActivity(), "view gone", Toast.LENGTH_SHORT).show();
-            //ivFragmentInitimg.setVisibility(View.GONE);
+            //Toast.makeText(getActivity(), "view gone", Toast.LENGTH_SHORT).show();
+            ivFragmentInitimg.setVisibility(View.GONE);
         }
         Log.d("FragmentRun", "photoWallList:===" + photoWallList);
 
@@ -307,8 +311,10 @@ public class FragmentRun extends Fragment {
         Log.d("FragmentRun", "requestCode:" + requestCode);
         if (requestCode == 0 && data != null) {
             uri = data.getData();
+            Log.d("FragmentRun", "uri:" + uri);
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
             Cursor cursor = getActivity().getContentResolver().query(uri, filePathColumn, null, null, null);
+            Log.d("FragmentRun", "cursor:" + cursor);
             cursor.moveToFirst();
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
             String picturePath = cursor.getString(columnIndex);
@@ -400,4 +406,29 @@ public class FragmentRun extends Fragment {
         Log.d("FragmentRun", "==========");
     }
 
-}
+
+}/* @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        inflater.inflate(R.menu.menu_layout,menu);
+
+        super.onCreateOptionsMenu(menu, inflater);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.lv_menu:
+                lrFragmentrunImg.setLayoutManager(new LinearLayoutManager(getActivity()));
+                break;
+
+            case R.id.sta_menu:
+                lrFragmentrunImg.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+                break;
+        }
+
+        return true;
+    }*/

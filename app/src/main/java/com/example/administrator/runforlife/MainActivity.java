@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         //设置默认显示页面
         fragmentTransaction.replace(R.id.fragmentlayout,new FragmentRun());
         fragmentTransaction.commit();
+        rbFragmentRun.setChecked(true);
     }
 
     @OnClick({R.id.rb_fragment_run, R.id.rb_fragment_weather, R.id.rb_fragment_health, R.id.rb_fragment_date, R.id.rb_fragment_setting})
