@@ -50,8 +50,8 @@
     <integer name="default_underline_indicator_fade_delay">300</integer>
     <integer name="default_underline_indicator_fade_length">400</integer>
     <style name="TextAppearance.TabPageIndicator" parent="Widget">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/vpi__dark_theme</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@drawable/vpi__textcolor_indicator_my</item>
     </style>
     <style name="Theme.PageIndicatorDefaults" parent="android:Theme">
         <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
@@ -65,14 +65,13 @@
     </style>
     <style name="Widget.TabPageIndicator" parent="Widget">
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/vpi__tab_indicator_my</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
         <item name="android:paddingLeft">22dip</item>
         <item name="android:paddingRight">22dip</item>
-        <item name="android:paddingTop">12dp</item>
-        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
         <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@drawable/vpi__textcolor_indicator_my</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:maxLines">1</item>
     </style>
 </resources>

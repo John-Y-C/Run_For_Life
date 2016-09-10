@@ -19,10 +19,10 @@ import cn.sharesdk.onekeyshare.themes.classic.PlatformPageAdapter;
 
 /** 竖屏的九宫格页面适配器 */
 public class PlatformPageAdapterPort extends PlatformPageAdapter {
-	private static final int DESIGN_SCREEN_WIDTH_P = 720;
+	private static final int DESIGN_SCREEN_WIDTH_P = 400;
 	private static final int DESIGN_SEP_LINE_WIDTH = 1;
 	private static final int DESIGN_LOGO_HEIGHT = 76;
-	private static final int DESIGN_PADDING_TOP = 20;
+	private static final int DESIGN_PADDING_TOP = 5;
 	private static final int PAGE_SIZE_P = 9;
 	private static final int LINE_SIZE_P = 3;
 

@@ -8,21 +8,22 @@
 
 package cn.sharesdk.onekeyshare.themes.classic.land;
 
-import java.util.ArrayList;
-
 import android.content.Context;
-import cn.sharesdk.onekeyshare.themes.classic.PlatformPage;
-import cn.sharesdk.onekeyshare.themes.classic.PlatformPageAdapter;
 
 import com.mob.tools.utils.R;
 
+import java.util.ArrayList;
+
+import cn.sharesdk.onekeyshare.themes.classic.PlatformPage;
+import cn.sharesdk.onekeyshare.themes.classic.PlatformPageAdapter;
+
 /** 横屏的九宫格页面适配器 */
 public class PlatformPageAdapterLand extends PlatformPageAdapter {
-	private static final int DESIGN_SCREEN_WIDTH_L = 1280;
+	private static final int DESIGN_SCREEN_WIDTH_L = 500;
 	private static final int DESIGN_CELL_WIDTH_L = 160;
 	private static final int DESIGN_SEP_LINE_WIDTH = 1;
 	private static final int DESIGN_LOGO_HEIGHT = 76;
-	private static final int DESIGN_PADDING_TOP = 20;
+	private static final int DESIGN_PADDING_TOP = 10;
 
 	public PlatformPageAdapterLand(PlatformPage page, ArrayList<Object> cells) {
 		super(page, cells);

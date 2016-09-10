@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:background="@drawable/base_titlebar_bg"
+            android:background="#1A1A1A"
             android:id="@+id/rg_health_choice">
 
             <RadioButton
@@ -24,8 +24,8 @@
                 android:text="训练计划"
                 android:checked="true"
                 android:textColor="@drawable/healthtitle_text_color"
-                android:padding="10dp"
-                android:textSize="20sp"/>
+                android:padding="12dp"
+                android:textSize="18sp"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -34,19 +34,11 @@
                 android:button="@null"
                 android:text="健康资讯"
                 android:textColor="@drawable/healthtitle_text_color"
-                android:padding="10dp"
-                android:textSize="20sp"/>
+                android:padding="12dp"
+                android:textSize="18sp"/>
 
         </RadioGroup>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/im_fragment_health_share"
-            android:background="@drawable/share"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            />
 
     </RelativeLayout>
 

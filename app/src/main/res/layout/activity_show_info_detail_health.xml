@@ -20,6 +20,17 @@
             android:id="@+id/ib_showinfodetail_back"
             android:onClick="back"/>
 
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/im_healthinfo_share"
+            android:background="@drawable/share"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -34,10 +45,14 @@
         </WebView>
 
         <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:indeterminateDrawable="@drawable/drawable_progress"
+            android:indeterminateOnly="true"
+            android:indeterminateBehavior="repeat"
             android:layout_centerInParent="true"
             android:id="@+id/pb_showinfodetail_loading"/>
+
     </RelativeLayout>
 
 </LinearLayout>
